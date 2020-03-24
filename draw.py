@@ -63,23 +63,35 @@ def add_box( polygons, x, y, z, width, height, depth ):
 
 def add_sphere(polygons, cx, cy, cz, r, steps ):
     points = generate_sphere(cx, cy, cz, r, steps)
+    t = 0
+    N = steps+1
+    while (t < len(points)-(N+1)):
+        add_polygon(polygons, points[t][0], points[t][1], points[t][2],
+                            points[t+1][0], points[t+1][1], points[t+1][2],
+                        points[t+1+N][0], points[t+1+N][1], points[t+1+N][2])
+        if(t%N!=0 and (t+1)%N!=0):
+            add_polygon(polygons, points[t][0], points[t][1], points[t][2],
+            points[t+1+N][0], points[t+1+N][1], points[t+1+N][2],
+            points[t+N][0], points[t+N][1], points[t+N][2])
+        t+=1
+        
 
-    lat_start = 0
-    lat_stop = steps
-    longt_start = 0
-    longt_stop = steps
-
-    steps+= 1
-    for lat in range(lat_start, lat_stop):
-        for longt in range(longt_start, longt_stop+1):
-            index = lat * steps + longt
-
-            add_edge(polygons, points[index][0],
-                     points[index][1],
-                     points[index][2],
-                     points[index][0]+1,
-                     points[index][1]+1,
-                     points[index][2]+1 )
+#    lat_start = 0
+#    lat_stop = steps
+#    longt_start = 0
+#    longt_stop = steps
+#
+#    steps+= 1
+#    for lat in range(lat_start, lat_stop):
+#        for longt in range(longt_start, longt_stop+1):
+#            index = lat * steps + longt
+#
+#            add_edge(polygons, points[index][0],
+#                     points[index][1],
+#                     points[index][2],
+#                     points[index][0]+1,
+#                     points[index][1]+1,
+#                     points[index][2]+1 )
 
 def generate_sphere( cx, cy, cz, r, steps ):
     points = []
