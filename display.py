@@ -11,6 +11,7 @@ BLUE = 2
 STEP = 0.01
 
 DEFAULT_COLOR = [0,0,0]
+VIEWV = [0,0,1]
 
 def new_screen( width = XRES, height = YRES ):
     screen = []
