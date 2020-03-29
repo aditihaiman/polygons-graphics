@@ -44,24 +44,24 @@ def add_box( polygons, x, y, z, width, height, depth ):
     add_polygon(polygons, x, y1, z, x1, y1, z, x1, y, z) #right
 
     #back
-    add_polygon(polygons, x, y, z1, x, y1, z1, x1, y, z1) #left
-    add_polygon(polygons, x, y1, z1, x1, y1, z1, x1, y, z1) #right
+    add_polygon(polygons, x1, y, z1, x, y1, z1,  x, y, z1) #left
+    add_polygon(polygons, x1, y, z1, x1, y1, z1, x, y1, z1) #right
     
     #top
     add_polygon(polygons, x, y, z, x1, y, z1, x, y, z1)#left
     add_polygon(polygons, x, y, z, x1, y, z, x1, y, z1)#right
     
     #bottom
-    add_polygon(polygons, x, y1, z, x1, y1, z1, x, y1, z1)#left
-    add_polygon(polygons, x, y1, z, x1, y1, z, x1, y1, z1)#right
+    add_polygon(polygons, x, y1, z1, x1, y1, z1, x, y1, z)#left
+    add_polygon(polygons, x1, y1, z1, x1, y1, z, x, y1, z)#right
     
     #left side
     add_polygon(polygons, x, y, z, x, y, z1, x, y1, z1) #left
     add_polygon(polygons, x, y1, z1, x, y1, z, x, y, z) #right
     
     #right side
-    add_polygon(polygons, x1, y, z, x1, y, z1, x1, y1, z1) #left
-    add_polygon(polygons, x1, y1, z1, x1, y1, z, x1, y, z) #right
+    add_polygon(polygons, x1, y1, z1, x1, y, z1, x1, y, z) #left
+    add_polygon(polygons, x1, y, z, x1, y1, z, x1, y1, z1) #right
 
 def add_sphere(polygons, cx, cy, cz, r, steps ):
     points = generate_sphere(cx, cy, cz, r, steps)
