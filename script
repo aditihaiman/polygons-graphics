@@ -13,7 +13,7 @@ display
 #clear the edge matrix, test the sphere
 clear
 sphere
-0 0 0 200
+0 0 0 200 200 200
 display
 #rotate 90 degrees about y to check lines
 ident
