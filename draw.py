@@ -63,8 +63,8 @@ def add_box( polygons, x, y, z, width, height, depth ):
     add_polygon(polygons, x1, y1, z1, x1, y, z1, x1, y, z) #left
     add_polygon(polygons, x1, y, z, x1, y1, z, x1, y1, z1) #right
 
-def add_sphere(polygons, cx, cy, cz, r, steps ):
-    points = generate_sphere(cx, cy, cz, r, steps)
+def add_sphere(polygons, cx, cy, cz, rx, ry, rz, steps ):
+    points = generate_sphere(cx, cy, cz, rx, ry, rz, steps)
 
     lat_start = 0
     lat_stop = steps
@@ -96,7 +96,7 @@ def add_sphere(polygons, cx, cy, cz, r, steps ):
                     points[t%N][0], points[t%N][1], points[t%N][2])
             
 
-def generate_sphere( cx, cy, cz, r, steps ):
+def generate_sphere( cx, cy, cz, rx, ry, rz, steps ):
     points = []
 
     rot_start = 0
@@ -109,9 +109,9 @@ def generate_sphere( cx, cy, cz, r, steps ):
         for circle in range(circ_start, circ_stop+1):
             circ = circle/float(steps)
 
-            x = r * math.cos(math.pi * circ) + cx
-            y = r * math.sin(math.pi * circ) * math.cos(2*math.pi * rot) + cy
-            z = r * math.sin(math.pi * circ) * math.sin(2*math.pi * rot) + cz
+            x = rx * math.cos(math.pi * circ) + cx
+            y = ry * math.sin(math.pi * circ) * math.cos(2*math.pi * rot) + cy
+            z = rz * math.sin(math.pi * circ) * math.sin(2*math.pi * rot) + cz
 
             points.append([x, y, z])
             #print 'rotation: %d\tcircle%d'%(rotation, circle)

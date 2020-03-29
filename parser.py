@@ -52,7 +52,7 @@ def parse_file( fname, edges, polygons, transform, screen, color ):
     lines = f.readlines()
 
     steps_2d = 100
-    steps_3d = 20
+    steps_3d = 10
 
     c = 0
     while c < len(lines):
@@ -67,7 +67,7 @@ def parse_file( fname, edges, polygons, transform, screen, color ):
             #print 'SPHERE\t' + str(args)
             add_sphere(polygons,
                        float(args[0]), float(args[1]), float(args[2]),
-                       float(args[3]), steps_3d)
+                       float(args[3]), float(args[4]), float(args[5]), steps_3d)
 
         elif line == 'torus':
             #print 'TORUS\t' + str(args)

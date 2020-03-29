@@ -1,0 +1,82 @@
+ident
+#ears
+sphere
+155 480 10 20 70 10
+rotate
+z -50
+apply
+ident
+
+sphere
+300 270 10 20 70 10
+rotate
+z 25
+apply
+ident
+
+#face
+box
+200 350 10 100 200 10
+box
+180 360 10 140 60 10
+
+#horns
+box
+200 420 10 20 70 10
+sphere
+210 430 10 10 10 10
+box
+280 420 10 20 70 10
+sphere
+290 430 10 10 10 10
+
+#nose
+box
+210 180 10 80 60 10
+sphere
+230 150 10 10 15 10
+sphere
+270 150 10 10 15 10
+
+#eyes
+sphere
+220 280 10 20 20 10
+sphere
+280 280 10 20 20 10
+
+#neck
+box
+230 120 10 40 120 10
+
+ident
+move
+0 50 0
+apply
+
+#body
+box
+230 50 -10 40 30 -500
+
+#legs
+box
+230 20 10 10 20 10
+
+box
+230 20 490 10 20 10
+
+box
+260 20 10 10 20 10
+
+box
+260 20 490 10 20 10
+
+display
+
+ident
+rotate
+y 30
+apply
+
+save
+giraffo.png
+display
